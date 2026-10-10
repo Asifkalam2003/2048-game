@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: white;
+}
+
+/* Game Container */
+.game-container {
+    width: min(90vw, 450px);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Game Title */
+h1 {
+    font-size: 70px;
+    font-weight: 800;
+    margin-bottom: 20px;
+
+    background: linear-gradient(90deg, #00f5ff, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 30px rgba(0, 245, 255, 0.2);
+}
+
+/* Score Section */
+.score-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.score-container p {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* New Game Button */
+button {
+    background: linear-gradient(135deg, #00f5ff, #a855f7);
+    color: #111;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Game Board */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 12px;
+    aspect-ratio: 1;
+
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Tiles */
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 0;
+    border-radius: 12px;
+
+    font-size: clamp(18px, 5vw, 32px);
+    font-weight: 700;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+
+    transition: background 0.2s ease;
+}
+
+/* Tile Colors */
+.tile[data-value="2"] {
+    background: #38bdf8;
+}
+
+.tile[data-value="4"] {
+    background: #818cf8;
+}
+
+.tile[data-value="8"] {
+    background: #a855f7;
+}
+
+.tile[data-value="16"] {
+    background: #d946ef;
+}
+
+.tile[data-value="32"] {
+    background: #ec4899;
+}
+
+.tile[data-value="64"] {
+    background: #f43f5e;
+}
+
+.tile[data-value="128"] {
+    background: #f97316;
+}
+
+.tile[data-value="256"] {
+    background: #eab308;
+}
+
+.tile[data-value="512"] {
+    background: #22c55e;
+}
+
+.tile[data-value="1024"] {
+    background: #14b8a6;
+}
+
+.tile[data-value="2048"] {
+    background: linear-gradient(135deg, #00f5ff, #a855f7);
+    box-shadow: 0 0 25px #a855f7;
+}
+
+/* Instructions */
+.game-container > p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+/* Game Message */
+#game-message {
+    font-size: 20px;
+    font-weight: 700;
+    color: #00f5ff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .game-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    .score-container p {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    button {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    #game-board {
+        gap: 7px;
+        padding: 8px;
+    }
+}
